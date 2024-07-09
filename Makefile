@@ -34,9 +34,9 @@ format :; forge fmt
 
 anvil :; anvil -m 'test test test test test test test test test test test junk' --steps-tracing --block-time 1
 
-slither :; slither . --config-file slither.config.json 
+slither :; slither . --config-file slither.config.json --checklist > ./artifacts/slither_report.md
 
-aderyn :; aderyn --root .
+aderyn :; aderyn . -o ./artifacts/aderyn_report.md
 
 scope :; tree ./src/ | sed 's/└/#/g; s/──/--/g; s/├/#/g; s/│ /|/g; s/│/|/g'
 
